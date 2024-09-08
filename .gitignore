@@ -1,0 +1,12 @@
+# Ignora la carpeta de dependencias
+node_modules/
+
+# Ignora la carpeta de construcción generada por Angular
+dist/
+
+# Ignora archivos y configuraciones de Angular locales
+.angular/
+
+# Ignora configuraciones del entorno de desarrollo como Visual Studio Code o WebStorm
+.idea/
+.vscode/
