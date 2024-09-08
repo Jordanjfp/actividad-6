@@ -1,1 +1,60 @@
-<p>user-form works!</p>
+<div class="container">
+  <h2>{{ isEditing ? "ACTUALIZAR USUARIO" : "NUEVO USUARIO" }}</h2>
+
+  <form (ngSubmit)="saveUser()">
+    <div class="form-group">
+      <label for="first_name">Nombre Usuario</label>
+      <input
+        type="text"
+        id="first_name"
+        [(ngModel)]="user.first_name"
+        name="first_name"
+        class="form-control"
+        placeholder="Introduce nombre de usuario"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="last_name">Apellido Usuario</label>
+      <input
+        type="text"
+        id="last_name"
+        [(ngModel)]="user.last_name"
+        name="last_name"
+        class="form-control"
+        placeholder="Introduce apellido de usuario"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Usuario</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="user.email"
+        name="email"
+        class="form-control"
+        placeholder="Introduce email de usuario"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagen Usuario</label>
+      <input
+        type="text"
+        id="image"
+        [(ngModel)]="user.image"
+        name="image"
+        class="form-control"
+        placeholder="Introduce la URL de la imagen del usuario"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      {{ isEditing ? "Actualizar" : "Guardar" }}
+    </button>
+  </form>
+</div>

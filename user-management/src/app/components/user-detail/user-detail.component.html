@@ -1,1 +1,23 @@
-<p>user-detail works!</p>
+<div *ngIf="user">
+  <div class="user-detail-container">
+    <div class="user-detail-left">
+      <img [src]="user.image" alt="Imagen del usuario" />
+    </div>
+    <div class="user-detail-right">
+      <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+
+      <div class="buttons">
+        <button (click)="goBack()" class="btn">Volver a listado</button>
+        <a [routerLink]="['/updateuser', user.id]" class="btn no-underline">
+          Actualizar
+        </a>
+        <button (click)="confirmDelete(user.id)" class="btn">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!user">
+  <p>Cargando información del usuario...</p>
+</div>
